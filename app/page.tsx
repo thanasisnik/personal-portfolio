@@ -6,7 +6,7 @@ export default function Home() {
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
         <img
           className="dark:invert"
-          src="{{NEXT_PUBLIC_BASE_PATH}}/next.svg"
+          src="{`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/next.svg"
           alt="Next.js logo"
           width={180}
           height={38}
@@ -61,7 +61,7 @@ export default function Home() {
         >
           <img
             aria-hidden
-            src="{{NEXT_PUBLIC_BASE_PATH}}/file.svg"
+            src="{`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/file.svg"
             alt="File icon"
             width={16}
             height={16}
@@ -76,7 +76,7 @@ export default function Home() {
         >
           <img
             aria-hidden
-            src="{{NEXT_PUBLIC_BASE_PATH}}/window.svg"
+            src="{`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/window.svg"
             alt="Window icon"
             width={16}
             height={16}
@@ -91,7 +91,7 @@ export default function Home() {
         >
           <img
             aria-hidden
-            src="{{NEXT_PUBLIC_BASE_PATH}}/globe.svg"
+            src="{`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/globe.svg"
             alt="Globe icon"
             width={16}
             height={16}
