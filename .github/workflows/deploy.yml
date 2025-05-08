@@ -1,0 +1,16 @@
+name: Deploy to GitHub Pages           #any name
+on: [push]                             # when? every push
+jobs:                                 #jobs defines what will execute
+  deploy:                              #define a job with name deploy
+    runs-on: ubuntu-latest              #defines where the server will run the workflow
+    steps:
+      - uses: actions/checkout@v4                # A ready action that downloads the code from GitHub repo
+      - uses: actions/setup-node@v4              # Node installation (necessery so Next.js can "run")
+        with: 
+          node-version: 20                        #Defines the version of node
+      - run: npm install                           # Install the node_modules
+      - run: npm run build                          # Builds the Next.js project
+      - uses: peaceiris/actions-gh-pages@v3          # Deploy to GitHub Pages
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}  # Authentication
+          publish_dir: ./out                      # where to find the built files
